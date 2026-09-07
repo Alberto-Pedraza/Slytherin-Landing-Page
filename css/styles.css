@@ -95,3 +95,34 @@ h1, h2, h3{
   .linaje-col:first-child{ border-top:none; margin-top:0; }
 }
 
+
+#historia{ padding-bottom:4rem; }
+
+.historia-cuerpo{
+  max-width:900px;
+  margin:0 auto;
+  padding:1rem 1.5rem 2rem;
+  display:grid;
+  grid-template-columns:1.4fr 1fr;
+  gap:2rem;
+}
+.historia-anio{
+  font-family:'Cinzel', serif;
+  color:var(--acento);
+  font-size:.85rem;
+  margin-top:1.5rem;
+  margin-bottom:.3rem;
+}
+.historia-anio:first-child{ margin-top:0; }
+.historia-texto p:not(.historia-anio){ color:var(--plata); line-height:1.65; }
+
+.mapa-label{
+  fill:var(--plata);
+  font-family:'EB Garamond', serif;
+  font-size:11px;
+}
+
+@media (max-width:760px){
+  .historia-cuerpo{ grid-template-columns:1fr; }
+  .historia-mapa{ max-width:180px; margin:0 auto; }
+}
