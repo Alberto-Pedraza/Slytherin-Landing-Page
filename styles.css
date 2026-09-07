@@ -10,24 +10,27 @@
 }
 
 .form {
-    background-color: #1A3E2F; /* Fondo gris claro */
-    padding: 20px;
-    border-radius: 8px;
-    border-color: #AAAAAA;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 255, 128, 0.15), 0 0 10px rgba(170, 170, 170, 0.2);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid #5d5d5d;
+    color: #e0e0e0;
+    background: linear-gradient(145deg, #122b1b, #0a170f);
   }
 
   /* Color del título */
   .form h3 {
-    color: #AAAAAA; /* Azul oscuro */
+    color: #AAAAAA;
     margin-bottom: 20px;
     font-family: var(--font-subheading); 
     font-weight: bold;
     text-align: center;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
   }
    /* Color del título */
   .form h6 {
-    color: #AAAAAA; /* Azul oscuro */
+    color: #AAAAAA; 
     margin-bottom: 20px;
     font-family: var(--font-heading); 
     font-weight: bold;
@@ -35,22 +38,20 @@
 
   /* Color de los labels (etiquetas de texto) */
   .form .form-label {
-    color: #AAAAAA;
+    color: #2ecc71;
     font-weight: bold;
     font-family: var(--font-heading);
+    font-size: 0.9rem;
+  letter-spacing: 1px;
   }
 
-  .form .form-select {
-    color: #AAAAAA;
-    font-family: var(--font-body);
-    font-size: small;
-  }
-
-  .form .form-select {
-    background-color: #2A623D;
-    border: 1px solid #ced4da;
-    color: #F1F1F1;
-  }
+ /* Campos de entrada y selecciones */
+.form .form-control, .form .form-select {
+  background-color: #08120b;
+  border: 1px solid #2a5235;
+  color: #ffffff;
+  border-radius: 6px;
+}
 
   /* Color de los inputs (campos de texto) */
   .form .form-control {
@@ -65,11 +66,6 @@
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
   }
 
-  /* Color del texto de ayuda */
-  .form .form-text {
-    color: #6c757d;
-    font-family: var(--font-body);
-  }
 
   /* Color del botón */
   .form .btn-primary {
@@ -82,3 +78,36 @@
     background-color: #218838;
     border-color: #1e7e34;
   }
+
+  /* Resplandor al seleccionar un campo */
+.form .form-control:focus, .form .form-select:focus {
+  background-color: #0e1e12;
+  border-color: #aaaaaa; /* Borde plateado en focus */
+  box-shadow: 0 0 10px rgba(170, 170, 170, 0.4);
+  color: #fff;
+}
+.form .btn-primary {
+  background: linear-gradient(135deg, #1a472a, #2e7d32);
+  border: 1px solid #aaaaaa;
+  color: #ffffff;
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+}
+.form .btn-primary {
+  background: linear-gradient(135deg, #1a472a, #2e7d32);
+  border: 1px solid #aaaaaa;
+  color: #ffffff;
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+}
+.form .form-text {
+  color: #88a38f;
+  font-style: italic;
+}
+.form h6{
+    color: #2ecc71;
+}
