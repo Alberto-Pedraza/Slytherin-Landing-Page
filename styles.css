@@ -1,26 +1,122 @@
 
+
 /* fondo de la barra: Verde Oscuro Slytherin */
 .bg-slytherin {
   background-color: #0d2f1d !important;
   border-bottom: 2px solid #5D5D5D; 
 }
-
-/* important es para asegurar que se coloquen de ese tono */
-.navbar-slytherin .navbar-brand,
-.bg-slytherin .navbar-brand,
-.bg-slytherin .nav-link,
-.text-silver {
-  color: #5D5D5D !important;
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+ 
+/*? NAVBAR */
+.nav-logo {
+    position: absolute;
+    top: 60%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 80px !important;    
+    object-fit: contain;
+    mix-blend-mode: screen;
+    filter: drop-shadow(0 0 10px rgba(13, 119, 23, 0.9));
+    z-index: 10;
 }
-
-/* botón del carrito Borde gris/plateado y texto gris */
-.btn-outline-silver {
-  color: #5D5D5D !important;
-  border-color: #5D5D5D !important;
+ 
+.navbar-brand {
+    position: relative;
+    padding-left: 90px !important;
 }
-
-/* Color verde para el contador del carrito */
-.bg-success {
+ 
+.navbar-slytherin {
+    background-color: rgba(10, 20, 14, 0.95) !important;
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(217, 217, 217, 0.2) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+ 
+/* Tipografía Cinzel para el nombre junto al logo */
+.nav-brand-text {
+    font-family: 'Cinzel', serif !important;
+    font-size: 1.35rem;
+    letter-spacing: 3px;
+    font-weight: 700;
+    color: #d6d6d6 !important;
+    text-shadow: 0 0 10px rgba(13, 119, 23, 0.5);
+}
+ 
+.navbar-slytherin .nav-link {
+    color: #d6d6d6 !important;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+ 
+.navbar-slytherin .nav-link:hover {
+    color: #2a7e43 !important;
+    text-shadow: 0 0 8px rgba(42, 126, 67, 0.6);
+}
+ 
+/*?BOTÓN CARRITO */
+.btn-carrito {
+    color: #d6d6d6 !important;
+    border: 1px solid #d6d6d6 !important;
+    background: transparent;
+    transition: all 0.3s ease-in-out;
+    
+}
+.btn-carrito:hover {
+    background-color: #2a7e43 !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 10px rgba(42, 126, 67, 0.5);
+}
+ 
+/*?TEXTOS GENERALES DE MARCA */
+.brand-text {
+    font-family: 'Cinzel', serif !important;
+    color: #d6d6d6;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(13, 119, 23, 0.3);
+}
+ 
+.btn-carrito:hover {
   background-color: #2a7e43 !important;
+  color: #ffffff !important;
+}
+.brand-text {
+    font-family: var(--font-title);
+    color: var(--slytherin-silver-light);
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(13, 119, 23, 0.3);
+}
+ 
+/*? botones
+
+/* --- ESTILOS BASE DE LOS BOTONES --- */
+
+/* Botón 1: Catálogo (Verde Bosque) */
+.btn-catalogo {
+  background-color: #123824 !important;
+  color: #e0e0e0 !important;
+  border: 2px solid #999999 !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease-in-out !important; /* Suavidad mágica */
+}
+
+/* Botón 2: Formulario (Gris Plata) */
+.btn-formulario {
+  background-color: #123824 !important;
+  color: #e0e0e0 !important;
+  border: 2px solid #999999 !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease-in-out !important; /* Suavidad mágica */
+}
+
+
+/* --- EL MISMO EFECTO MÁGICO PARA AMBOS (Al pasar el mouse) --- */
+
+.btn-catalogo:hover,
+.btn-formulario:hover,
+.btn-carrito:hover {
+  background-color: #1b5235 !important; /* Ambos se vuelven verde brillante */
+  color: #ffffff !important;            /* El texto de ambos se vuelve blanco puro */
+  border-color: #2a7e43 !important;     /* El borde cambia a verde esmeralda */
+  transform: scale(1.05) !important;     /* Ambos se agrandan un poquito */
+  box-shadow: 0 0 20px #2a7e43 !important; /* Ambos emiten el mismo brillo verde */
 }
 
