@@ -25,67 +25,43 @@
  
   const categories = [
     {
-      id: 'bufandas', label: 'Bufandas y accesorios', icon: 'scarf',
+      id: 'varitas', label: 'Varitas', icon: 'wand',
       products: [
-        { name: 'Bufanda de punto trenzado', desc: 'Tejido grueso en verde botella y plata, a rayas diagonales.', price: '$450' },
-        { name: 'Corbata a rayas de la casa', desc: 'Seda mate con el rayado clásico verde y plata.', price: '$320' },
-        { name: 'Guantes con ribete plateado', desc: 'Lana suave con puntada de vivo metálico en el puño.', price: '$280' }
+        { id: 'var1', name: 'Varita de Colmillo de Serpiente', price: '58', imagen:'assets/Varita_Colmillo_Serpiente.png', desc: 'Madera de ébano con núcleo de colmillo de serpiente. Favorece hechizos defensivos', cant: '10'},
+        {id: 'var2', name: 'Varita de Vena de Basilisco', price: '75', imagen:'assets/Varita_Colmillo_Serpiente.png', desc: 'Madera de serpiente con núcleo de cuerno de basilisco. Canaliza un poder legendario, estatus supremo y elegancia excepcional', cant: '10'},
+        { id: 'var3', name: 'Varita de Salazar Slytherin', price: '100', imagen:'assets/Varita_Colmillo_Serpiente.png', desc: 'Madera de ébano con núcleo de colmillo de serpiente. Favorece hechizos defensivos', cant: '10'}
       ]
     },
     {
-      id: 'tunicas', label: 'Túnicas y uniformes', icon: 'robe',
+      id: 'pociones', label: 'Pociones y Elixirs', icon: 'plush',
       products: [
-        { name: 'Túnica de gala con ribete', desc: 'Corte largo, forro interior y detalle bordado en el cuello.', price: '$980' },
-        { name: 'Capa de invierno forrada', desc: 'Exterior resistente al viento, forro térmico verde oscuro.', price: '$1,150' },
-        { name: 'Chaleco de punto bordado', desc: 'Punto fino con escudo bordado a mano en el pecho.', price: '$650' }
+        { id: 'poc1', name: 'Serpent’s Focus', price: '12', imagen:'assets/Varita_Colmillo_Serpiente.png', desc: 'Mejora temporalmente la concentración del mago.', cant: '10'},
+        {id: 'poc2', name: 'Veritaserum', price: '25', imagen:'assets/Varita_Colmillo_Serpiente.png', desc: 'Un poderoso suero de la verdad. Tres gotas son suficientes para revelar los más íntimos secretos de cualquier mago.', cant: '10' },
+        { id: 'poc3', name: 'Felix Felicis', price: '50', imagen:'assets/Varita_Colmillo_Serpiente.png', desc: 'Proporciona al bebedor un periodo de buena suerte durante el cual, todo lo que intente le saldrá bien.', cant: '10'}
       ]
     },
     {
-      id: 'varitas', label: 'Varitas y artículos', icon: 'wand',
+      id: 'tunicas', label: 'Túnicas y Ropa', icon: 'robe',
       products: [
-        { name: 'Varita en madera de roble', desc: 'Tallada a mano, acabado oscuro y empuñadura texturizada.', price: '$890' },
-        { name: 'Soporte de varita en nogal', desc: 'Base tallada para exhibir la pieza sobre un escritorio.', price: '$310' },
-        { name: 'Estuche de viaje acolchado', desc: 'Forro interior suave, cierre magnético discreto.', price: '$260' }
+        {id: 'tuni1', name: 'Túnica Clásica de Slytherin', price: '35', imagen:'assets/Varita_Colmillo_Serpiente.png', desc: 'Túnica negra con detalles verde esmeralda', cant: '10' },
+        { id: 'tuni2', name: 'Túnica de la Reliquia de la Casa', price: '65', imagen:'assets/Varita_Colmillo_Serpiente.png', desc: 'Una bata de casa, para los más astutos y ambiciosos de Slytherin', cant: '10' },
+        { id: 'tuni3', name: 'Conjunto de Bufanda, Guantes y Gorro de la Casa', price: '15', imagen:'assets/Varita_Colmillo_Serpiente.png', desc: 'Accesorios ideales para época de invierno.', cant: '10' }
       ]
     },
     {
-      id: 'joyeria', label: 'Joyería', icon: 'ring',
+      id: 'joyeria', label: 'Reliquias Familiares', icon: 'ring',
       products: [
-        { name: 'Anillo con sello de serpiente', desc: 'Baño en plata envejecida, motivo entrelazado.', price: '$540' },
-        { name: 'Colgante de esmeralda tallada', desc: 'Piedra facetada en cadena fina de plata.', price: '$720' },
-        { name: 'Gemelos grabados', desc: 'Par en metal plateado con grabado geométrico sutil.', price: '$390' }
+        {id: 'reli1', name: 'Anillo de la Serpiente Plateada', price: '70', imagen:'assets/Varita_Colmillo_Serpiente.png', desc: 'Anillo antiguo utilizado como símbolo entre familias mágicas.', cant: '10' },
+        { id: 'reli2', name: 'Reloj de serpiente de bolsillo', price: '55', imagen:'assets/Varita_Colmillo_Serpiente.png', desc: 'Reloj encantado que nunca pierde la hora.', cant: '10' },
+        { id: 'reli3', name: 'Guardapelo de Slytherin', price: '100', imagen:'assets/Varita_Colmillo_Serpiente.png', desc: 'Este guardapelo dorado es una reliquia familiar de Slytherin, perteneció en un principio a Salazar Slytherin y acabó en manos de la familia Gaunt.', cant: '1' }
       ]
     },
     {
-      id: 'papeleria', label: 'Libros y papelería', icon: 'book',
+      id: 'libros', label: 'Grimorios, Libros y Documentos Secretos', icon: 'book',
       products: [
-        { name: 'Cuaderno con relieve de escamas', desc: 'Tapa dura texturizada, hojas de papel grueso.', price: '$220' },
-        { name: 'Set de pluma y tintero', desc: 'Pluma de punta fina con tintero de vidrio verde.', price: '$340' },
-        { name: 'Diario ilustrado', desc: 'Páginas con ilustraciones botánicas en tinta verde.', price: '$410' }
-      ]
-    },
-    {
-      id: 'decoracion', label: 'Decoración', icon: 'crest',
-      products: [
-        { name: 'Tapiz bordado del escudo', desc: 'Bordado denso sobre tela gruesa, listo para colgar.', price: '$780' },
-        { name: 'Vitral decorativo', desc: 'Panel de vidrio de colores con motivo de serpiente.', price: '$960' },
-        { name: 'Set de velas de bosque', desc: 'Tres velas aromáticas en tonos verde oscuro.', price: '$310' }
-      ]
-    },
-    {
-      id: 'vajilla', label: 'Tazas y vajilla', icon: 'mug',
-      products: [
-        { name: 'Taza con asa de serpiente', desc: 'Cerámica esmaltada, asa moldeada a mano.', price: '$260' },
-        { name: 'Set de té de porcelana', desc: 'Tetera y dos tazas en verde esmeralda con filo dorado.', price: '$890' },
-        { name: 'Posavasos grabados', desc: 'Metal cepillado con grabado de líneas finas.', price: '$180' }
-      ]
-    },
-    {
-      id: 'coleccionables', label: 'Coleccionables', icon: 'plush',
-      products: [
-        { name: 'Peluche de serpiente tejido', desc: 'Tejido a mano en estambre suave, tamaño mediano.', price: '$480' },
-        { name: 'Figura tallada en resina', desc: 'Pieza de colección con base numerada.', price: '$650' },
-        { name: 'Llavero esmaltado', desc: 'Esmalte duro sobre metal, forma de escudo.', price: '$150' }
+        {id: 'book1', name: 'Apuntes de Campo Sobre la Lengua de Serpiente', price: '60', imagen:'assets/Varita_Colmillo_Serpiente.png', desc: 'Libro excepcional sobre los descubrimientos de S. S. en el estudio de la lengua de serpiente ', cant: '10' },
+        { id: 'book2', name: 'Diario de Slytherin', price: '100', imagen:'assets/Varita_Colmillo_Serpiente.png', desc: 'En este diario se abordan los desacuerdos de Slytherin con los fundadores de Hogwarts, y ofrece una visión de sus planes del futuro', cant: '10' },
+        { id: 'book3', name: 'Archivo de Genealogía de Sangre Pura', price: '46', imagen:'assets/Varita_Colmillo_Serpiente.png', desc: 'Compendio reservado de linajes mágicos, alianzas familiares y registros heráldicos de antiguas casas', cant: '10' }
       ]
     }
   ];
@@ -106,17 +82,31 @@
   function renderGrid(){
     const cat = categories.find(c => c.id === activeId);
     gridEl.innerHTML = cat.products.map(p => `
-      <article class="product-card">
-        <div class="product-media">${iconSvg(cat.icon)}</div>
-        <div class="product-body">
-          <h3 class="product-name">${p.name}</h3>
-          <p class="product-desc">${p.desc}</p>
-          <div class="product-footer">
-            <span class="product-price">${p.price}</span>
-            <button class="add-btn" type="button">Añadir</button>
-          </div>
-        </div>
-      </article>
+      <article class="tarjeta-producto">
+            <!-- Imagen -->
+            <div class="imagen-producto">
+                <img src="${p.imagen}"
+                    alt="${p.name}">
+            </div>
+            <!-- Información del producto -->
+            <div class="info-producto">
+                <h3 class="nombre-producto">
+                    ${p.name}
+                </h3>
+                <p class="descripcion-producto">
+                    ${p.desc}
+                </p>
+                <!-- Precio y stock -->
+                <div class="precio-stock">
+                    <p class="precio">${p.price}<span>G</span></p>
+                    <p class="stock"> <strong>Disponible</strong></p>
+                </div>
+                <!-- Botón -->
+                <button class="boton-carrito" data-id="1">
+                    🐍 Agregar al carrito
+                </button>
+            </div>
+        </article>
     `).join('');
   }
  

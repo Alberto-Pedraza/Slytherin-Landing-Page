@@ -12,7 +12,7 @@
 
 /* ==============================================
 * SECCION DE ESTILOS PARA EL CATÁLOGO MÁGICO
-
+*/
 :root{
     --bg: #0A120F;
     --surface: #12211B;
@@ -36,9 +36,12 @@
   }
  
   .catalog{
-    max-width: 1180px;
+    /*max-width: 1180px;*/
     margin: 0 auto;
     padding: 4rem 1.5rem 5rem;
+    background-image: url("assets/background_catalogo.png");
+    background-size: cover;
+    background-position: center;
   }
  
   .catalog-header{
