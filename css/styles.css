@@ -57,3 +57,41 @@ h1, h2, h3{
 #hero h1{ font-size:clamp(2.2rem, 5vw, 3.6rem); margin-bottom:.5rem; }
 .hero-subtitle{ color:var(--plata); font-size:1.15rem; font-style:italic; }
 
+.linaje-header{
+  display:flex;
+  align-items:baseline;
+  gap:1rem;
+  max-width:900px;
+  margin:0 auto;
+  padding:3rem 1.5rem 1.5rem;
+  border-bottom:1px solid var(--linea);
+}
+.linaje-marca{
+  font-family:'Cinzel', serif;
+  color:var(--acento);
+  font-size:1.4rem;
+}
+
+#cualidades{ padding-bottom:3rem; }
+
+.linaje-grid{
+  max-width:900px;
+  margin:0 auto;
+  padding:2rem 1.5rem;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+}
+.linaje-col{
+  padding:0 1.5rem;
+  border-left:1px solid var(--linea);
+}
+.linaje-col:first-child{ border-left:none; padding-left:0; }
+.linaje-col h3{ font-size:1.1rem; margin-bottom:.6rem; color:var(--acento); }
+.linaje-col p{ color:var(--plata); line-height:1.6; font-size:.98rem; }
+
+@media (max-width:760px){
+  .linaje-grid{ grid-template-columns:1fr; }
+  .linaje-col{ border-left:none; border-top:1px solid var(--linea); padding:1.5rem 0 0; margin-top:1.5rem; }
+  .linaje-col:first-child{ border-top:none; margin-top:0; }
+}
+
