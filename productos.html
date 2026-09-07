@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pastelería Dulce Tentación</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- Nuestro CSS -->
+    <link rel="stylesheet" href="css/carrito_estilos.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         NAVBAR
+         ===================================================== -->
+
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm">
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="#">
+                🐍 Tienda de Slytheryn
+            </a>
+
+            <!-- BOTÓN DEL CARRITO -->
+            <button
+                class="btn btn-light position-relative"
+                data-bs-toggle="modal"
+                data-bs-target="#modalCarrito">
+
+                <i class="bi bi-cart3"></i>
+                Carrito
+
+                <!-- Número de productos -->
+                <span
+                    id="contadorCarrito"
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+
+                    0
+
+                </span>
+
+            </button>
+
+        </div>
+    </nav>
+
+
+    <!-- =====================================================
+         CONTENIDO
+         ===================================================== -->
+
+    <main class="container py-5">
+
+        <div class="text-center mb-5">
+
+            <h1 class="fw-bold">
+                Nuestros productos magicos 🪄
+            </h1>
+
+            <p class="text-muted">
+                Elige tu producto magico favorito y agrégalo al carrito.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             CONTENEDOR DE PRODUCTOS
+
+             JavaScript va a generar aquí las cards.
+             ================================================= -->
+
+        <div
+            id="contenedorProductos"
+            class="row g-4">
+            <div class="card">
+
+  
+
+</div>
+    
+
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         MODAL DEL CARRITO
+         ===================================================== -->
+
+    <div
+        class="modal fade"
+        id="modalCarrito"
+        tabindex="-1"
+        aria-hidden="true">
+
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <!-- HEADER -->
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title">
+                        🛒 Mi carrito
+                    </h5>
+
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal">
+                    </button>
+
+                </div>
+
+
+                <!-- BODY -->
+
+                <div class="modal-body">
+
+                    <!-- Aquí JavaScript mostrará los productos -->
+
+                    <div id="contenidoCarrito">
+
+                    </div>
+
+                </div>
+
+
+                <!-- FOOTER -->
+
+                <div class="modal-footer d-flex justify-content-between">
+
+                    <button
+                        id="btnVaciarCarrito"
+                        class="btn btn-outline-danger">
+
+                        <i class="bi bi-trash"></i>
+                        Vaciar carrito
+
+                    </button>
+
+
+                    <div class="text-end">
+
+                        <h5>
+                            Total:
+                            $<span id="totalCarrito">0</span>
+                        </h5>
+
+                        <button
+                            id="btnCompletarCompra"
+                            class="btn btn-success">
+
+                            <i class="bi bi-check-circle"></i>
+                            Completar compra
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         BOOTSTRAP JS
+         ===================================================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+    <!-- NUESTRO JAVASCRIPT -->
+
+    <script src="js/carrito_logica.js"></script>
+
+</body>
+
+</html>

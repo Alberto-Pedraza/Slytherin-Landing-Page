@@ -1,15 +1,19 @@
-# 🐍 La Herencia de Salazar /Sobre nosotros.
 
-Página web tipo "Sobre Nosotros" para una casa/linaje , con estética oscura y aristocrática (verde profundo, plata y tipografía).
+# Slytherin-Landing-Page
+Tienda para miembros de Slytherin
 
-## 📜 ¿Qué incluye?
+## Secciones de la landing page
+* Nav Bar y Hero Section - Liz, Mike
+* Manifiesto (Sobre nosotros) - Daniel
+* Cátalogo mágico - Sofia, Sebastian, Alberto
+* Modal Carrito de compras - Eduardo
+* Formulario de Reclutamiento (Contacto) - Alen, Salvador
+* Footer - Alejandro
 
-- 🖼️ **Hero**: imagen de fondo con título de bienvenida.
-- ⚔️ **Cualidades**: presentación de los valores de la casa (ambición, astucia, linaje).
-- 🏰 **Historia**: reseña del origen de la casa y sus mazmorras.
+### 
+# Documento entregable para capturas
+https://docs.google.com/document/d/1c7dBKEr5ZVvOFGhWVOwe3PJ3N2cy4Jxlsr5p2zOLJ7o/edit?usp=sharing
 
-## 🛠️ Tecnologías
 
-- HTML + CSS (Bootstrap 5 como base)
-- JavaScript para animaciones simples
+
 
