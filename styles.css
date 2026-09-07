@@ -1,0 +1,25 @@
+
+/* fondo de la barra: Verde Oscuro Slytherin */
+.bg-slytherin {
+  background-color: #0d2f1d !important;
+  border-bottom: 2px solid #5D5D5D; 
+}
+
+/* important es para asegurar que se coloquen de ese tono */
+.navbar-slytherin .navbar-brand,
+.bg-slytherin .navbar-brand,
+.bg-slytherin .nav-link,
+.text-silver {
+  color: #5D5D5D !important;
+}
+
+/* botón del carrito Borde gris/plateado y texto gris */
+.btn-outline-silver {
+  color: #5D5D5D !important;
+  border-color: #5D5D5D !important;
+}
+
+/* Color verde para el contador del carrito */
+.bg-success {
+  background-color: #2a7e43 !important;
+}
