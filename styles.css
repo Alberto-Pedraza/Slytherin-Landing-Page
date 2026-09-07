@@ -1,20 +1,25 @@
-/*?Paleta Slytherin*/
+/*? Paleta & Fuentes Slytherin */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
 
 :root {
-    /* Verdes base y mázmorra */
+    /*? Verdes base y mazmorra */
     --slytherin-bg-dark: #0A140E;       /* Fondo ultra oscuro de mázmorra */
     --slytherin-green-dark: #1A3E2F;    /* Verde base principal (RGB 26, 62, 47) */
     --slytherin-green-deep: #0E5A00;    /* Verde esmeralda intenso (RGB 14, 90, 0) */
     --slytherin-green-bright: #0D7717;  /* Verde de acento (RGB 13, 119, 23) */
 
-    /* Platas y grises puros */
+    /*? Platas y grises puros */
     --slytherin-silver-light: #D9D9D9;  /* Plata claro para títulos y texto principal */
-    --slytherin-silver-metal: #737373;  /* Gris/Plata medio para bordes (RGB 115, 115, 115) */
+    --slytherin-silver-metal: #737373;  /* Gris/Plata medio para bordes */
     
-    /* Tipografías */
+    /*? Tipografías */
     --font-title: 'Cinzel', serif;
     --font-body: 'Montserrat', sans-serif;
+}
+
+/*? CURSOR MÁGICO (VARITA VERDE NEÓN) */
+body, a, button, .btn, .nav-link, .navbar-brand {
+    cursor: none !important; 
 }
 
 body {
@@ -23,50 +28,32 @@ body {
     font-family: var(--font-body);
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Previene scroll horizontal indeseado */
+    overflow-x: hidden; 
 }
-/*?NAVBAR */
-.nav-logo {
-    height: 100px !important; /* Aumentamos el tamaño para que luzca imponente */
-    width: auto !important;
-    object-fit: contain;
-    vertical-align: middle;
+
+/*?Elemento flotante para la varita con resplandor neón */
+#wand-cursor {
+    position: fixed;
+    top: -10px;
+    left: -10px;
+    width: 52px;
+    height: 52px;
+    background-image: url('../assets/varita.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 9999;
     
-    mix-blend-mode: screen; 
-    filter: drop-shadow(0 0 8px rgba(13, 119, 23, 0.8));
-}
-.navbar-slytherin {
-  background-color: #0d2f1d !important;
-  border-bottom: 5px solid #d6d6d6;
-}
-
-.navbar-slytherin .nav-link,
-.navbar-slytherin .navbar-brand {
-  color: #d6d6d6 !important;
+    /*?Filtro Neón Verde Esmeralda */
+    filter: drop-shadow(0 0 6px #00ff66) 
+            drop-shadow(0 0 12px #2a7e43) 
+            brightness(1.4) 
+            contrast(1.2);
+    transition: transform 0.05s ease-out;
 }
 
-.navbar-slytherin .nav-link:hover {
-  color: #2a7e43 !important; /* Color verde al pasar el cursor */
-}
 
-.btn-carrito {
-  color: #d6d6d6 !important;
-  border: 1px solid #d6d6d6 !important;
-  background: transparent;
-}
-
-.btn-carrito:hover {
-  background-color: #2a7e43 !important;
-  color: #ffffff !important;
-}
-.brand-text {
-    font-family: var(--font-title);
-    color: var(--slytherin-silver-light);
-    letter-spacing: 2px;
-    text-shadow: 0 0 10px rgba(13, 119, 23, 0.3);
-}
-
-/**?TITULO*/
+/*? HERO SECTION */
 .hero-slytherin {
     min-height: 80vh;
     position: relative;
@@ -83,7 +70,6 @@ body {
     padding: 80px 0;
 }
 
-/* Capa de contraste */
 .hero-overlay {
     position: absolute;
     top: 0;
@@ -94,13 +80,11 @@ body {
     z-index: 1;
 }
 
-/* Contenido por encima del overlay */
 .hero-slytherin .container {
     position: relative;
     z-index: 2;
 }
 
-/* Estilo del Escudo */
 .slytherin-shield {
     max-width: 170px;
     height: auto;
@@ -113,7 +97,6 @@ body {
     filter: drop-shadow(0 0 25px var(--slytherin-silver-metal));
 }
 
-/* Título Principal */
 .hero-title {
     font-family: var(--font-title);
     color: var(--slytherin-silver-light);
@@ -122,7 +105,6 @@ body {
     font-weight: 700 !important;
 }
 
-/* Subtítulo */
 .hero-subtitle {
     color: var(--slytherin-silver-light);
     font-family: var(--font-body);
@@ -130,30 +112,26 @@ body {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
-/* ==========================================================================
-   CARRUSEL (TEXTO UBICADO ABAJO DE LA IMAGEN)
-   ========================================================================== */
+/*? CARRUSEL */
 .custom-carousel {
     background-color: var(--slytherin-green-dark);
     border: 1px solid var(--slytherin-silver-metal);
     border-radius: 12px;
     box-shadow: 0 0 25px rgba(13, 119, 23, 0.25);
     position: relative;
-    padding-bottom: 45px !important; /* Espacio para los indicadores inferiores */
+    padding-bottom: 45px !important;
 }
 
-/* Imagen limpia y sin obstrucciones */
 .carousel-img {
     width: 100% !important;
     height: auto !important;
     max-height: 520px !important;
-    object-fit: cover !important; /* Llena todo el marco de borde a borde */
+    object-fit: cover !important;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     filter: brightness(0.9) contrast(1.05);
 }
 
-/* Tarjeta contenedora del texto debajo de la imagen */
 .carousel-card-below {
     background-color: var(--slytherin-bg-dark);
     border-top: 2px solid var(--slytherin-silver-metal);
@@ -161,7 +139,6 @@ body {
     border-bottom-right-radius: 8px;
 }
 
-/* Título de la tarjeta */
 .text-silver {
     color: var(--slytherin-silver-light);
     font-family: var(--font-title);
@@ -169,9 +146,6 @@ body {
     letter-spacing: 1px;
 }
 
-/* --- Ajustes de Controles del Carrusel --- */
-
-/* Ajuste de posición de los indicadores (puntos) */
 .custom-indicators {
     bottom: 12px !important;
     margin-bottom: 0 !important;
@@ -190,7 +164,6 @@ body {
     box-shadow: 0 0 8px var(--slytherin-green-bright);
 }
 
-/* Flechas de navegación */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     filter: invert(34%) sepia(85%) saturate(1450%) hue-rotate(100deg) brightness(95%) contrast(90%);
