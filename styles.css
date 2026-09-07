@@ -314,3 +314,383 @@ body {
    <!-- *=========================================
     * FIN formulario
     * ==============================================-->
+
+/* ==============================================
+* SECCION DE ESTILOS PARA EL CATÁLOGO MÁGICO
+================================================= */
+:root{
+    --bg: #0A120F;
+    --surface: #12211B;
+    --surface-alt: #182B23;
+    --emerald: #2F6B45;
+    --emerald-deep: #1B3F2A;
+    --silver: #ADBAB3;
+    --ink: #E9EFEA;
+    --ink-muted: #8FA398;
+    --line: #24382F;
+    --gold-accent: #B08D3E;
+  }
+ 
+  *{ box-sizing: border-box; }
+ 
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+  }
+ 
+  .catalog{
+    /*max-width: 1180px;*/
+    margin: 0 auto;
+    padding: 4rem 1.5rem 5rem;
+    background-image: url("assets/background_catalogo.png");
+    background-size: cover;
+    background-position: center;
+  }
+ 
+  .catalog-header{
+    max-width: 640px;
+    position: relative;
+    padding-left: 1.25rem;
+    border-left: 2px solid var(--emerald-deep);
+  }
+ 
+  .catalog-header h2{
+    font-family: 'Spectral', serif;
+    font-weight: 500;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    margin: 0 0 .75rem;
+    color: var(--ink);
+    letter-spacing: .01em;
+  }
+ 
+  .catalog-header p{
+    margin: 0;
+    color: var(--ink-muted);
+    line-height: 1.6;
+    font-size: .975rem;
+  }
+ 
+  /* Category tabs */
+  .category-tabs{
+    display: flex;
+    gap: 1.9rem;
+    overflow-x: auto;
+    border-bottom: 1px solid var(--line);
+    padding: 0 0 0;
+    margin: 2.75rem 0 2.5rem;
+    scrollbar-width: none;
+  }
+  .category-tabs::-webkit-scrollbar{ display:none; }
+ 
+  .tab{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .45rem;
+    background: none;
+    border: none;
+    color: var(--ink-muted);
+    font-family: 'Work Sans', sans-serif;
+    font-size: .78rem;
+    padding: .2rem 0 .9rem;
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap;
+    transition: color .2s ease;
+  }
+  .tab svg{
+    width: 21px;
+    height: 21px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.4;
+    opacity: .65;
+    transition: opacity .2s ease;
+  }
+  .tab::after{
+    content:'';
+    position:absolute;
+    left:0; right:0; bottom:-1px;
+    height:2px;
+    background: var(--emerald);
+    transform: scaleX(0);
+    transition: transform .25s ease;
+  }
+  .tab:hover{ color: var(--ink); }
+  .tab.active{ color: var(--ink); }
+  .tab.active svg{ opacity: 1; }
+  .tab.active::after{ transform: scaleX(1); }
+ 
+  /* Product grid */
+  .product-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    transition: opacity .28s ease, transform .28s ease;
+  }
+  .product-grid.is-switching{
+    opacity: 0;
+    transform: translateY(6px);
+  }
+ 
+  .product-card{
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, var(--surface) 0%, var(--surface-alt) 100%);
+    border: 1px solid var(--line);
+    transition: transform .25s ease, border-color .25s ease;
+  }
+  .product-card:hover{
+    transform: translateY(-4px);
+    border-color: var(--emerald);
+  }
+ 
+  .product-media{
+    aspect-ratio: 4 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 32% 24%, var(--emerald-deep), var(--bg) 72%);
+    border-bottom: 1px solid var(--line);
+  }
+  .product-media svg{
+    width: 34%;
+    height: 34%;
+    stroke: var(--silver);
+    fill: none;
+    stroke-width: 1.2;
+    opacity: .85;
+  }
+ 
+  .product-body{
+    padding: 1.25rem 1.25rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    flex: 1;
+  }
+  .product-name{
+    font-family: 'Spectral', serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin: 0;
+    color: var(--ink);
+  }
+  .product-desc{
+    font-size: .85rem;
+    color: var(--ink-muted);
+    line-height: 1.55;
+    margin: 0;
+    flex: 1;
+  }
+  .product-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: .75rem;
+  }
+  .product-price{
+    font-weight: 600;
+    font-size: .95rem;
+    color: var(--gold-accent);
+  }
+  .add-btn{
+    background: transparent;
+    border: 1px solid var(--silver);
+    color: var(--ink);
+    padding: .5rem .95rem;
+    font-size: .78rem;
+    font-family: 'Work Sans', sans-serif;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .add-btn:hover{
+    background: var(--emerald);
+    border-color: var(--emerald);
+    color: #fff;
+  }
+  .add-btn.added{
+    background: var(--emerald-deep);
+    border-color: var(--emerald-deep);
+    color: var(--ink);
+  }
+ 
+  @media (max-width: 760px){
+    .product-grid{ grid-template-columns: 1fr; }
+    .category-tabs{ gap: 1.3rem; }
+    .catalog{ padding: 3rem 1.25rem 4rem; }
+  }
+
+.catalogo-productos {
+    min-height: 600px;
+    background-image: url("assets/background_catalogo.png");
+    background-size: cover;
+    background-position: center;
+    color: beige;
+    padding: 40px;
+}
+
+/* TARJETA DEL PRODUCTO */
+.tarjeta-producto {
+    position: relative;
+    width: 100%;
+    max-width: 310px;
+    background: linear-gradient(180deg, #071b16 0%, #04110e 55%, #020908 100%);
+    border: 1px solid #aa8b4b;
+    border-radius: 14px;
+    overflow: hidden;
+    color: #f2ede2;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+    font-family: Arial, sans-serif;
+}
+
+.tarjeta-producto::after {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border: 1px solid rgba(201, 170, 98, 0.3);
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+/* RAREZA */
+.rareza {
+    position: absolute;
+    top: 0;
+    left: 18px;
+    z-index: 2;
+    padding: 8px 16px;
+    background: #063b2d;
+    border-left: 1px solid #c6a25d;
+    border-right: 1px solid #c6a25d;
+    border-bottom: 1px solid #c6a25d;
+    color: #e8d6ad;
+    font-family: Georgia, serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+/* IMAGEN */
+.imagen-producto {
+    width: 100%;
+    height: 190px;
+    overflow: hidden;
+    background: #0b1f19;
+}
+
+.imagen-producto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.tarjeta-producto:hover .imagen-producto img {
+    transform: scale(1.04);
+}
+
+/* INFORMACIÓN */
+.info-producto {
+    position: relative;
+    padding: 18px;
+    z-index: 1;
+}
+
+.categoria {
+    margin: 0 0 6px;
+    color: #52a887;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.nombre-producto {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: 21px;
+    font-weight: normal;
+    line-height: 1.2;
+    text-align: center;
+    color: #f4ead8;
+}
+
+.descripcion-producto {
+    margin: 10px 0 14px;
+    color: #c6c3ba;
+    font-size: 12px;
+    line-height: 1.45;
+    text-align: center;
+}
+
+/* CARACTERÍSTICAS */
+.caracteristicas {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+}
+
+.caracteristicas span {
+    padding: 5px 9px;
+    border: 1px solid #467967;
+    border-radius: 20px;
+    background: rgba(10, 51, 39, 0.35);
+    color: #ddd9cd;
+    font-size: 10px;
+}
+
+/* PRECIO Y STOCK */
+.precio-stock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding-top: 13px;
+    border-top: 1px solid rgba(190, 157, 87, 0.35);
+}
+
+.precio {
+    margin: 0;
+    font-family: Georgia, serif;
+    color: #e4bd6c;
+    font-size: 23px;
+}
+
+.precio span {
+    font-size: 14px;
+}
+
+.stock {
+    margin: 0;
+    color: #65c899;
+    font-size: 11px;
+}
+
+/* BOTÓN */
+.boton-carrito {
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px 14px;
+    background: #07513b;
+    border: 1px solid #c7a25a;
+    border-radius: 7px;
+    color: #f3e9d4;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.boton-carrito:hover {
+    background: #0a6a4d;
+    transform: translateY(-2px);
+}
+
+/* ==================================================
+* FIN DE SECCION DE ESTILOS PARA EL CATÁLOGO MÁGICO
+===================================================== */
