@@ -1,6 +1,3 @@
-/* Importar las fuentes desde Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
-
 /* Definición de variables globales para tipografía */
 :root {
   --font-heading: 'Cinzel', serif;
@@ -9,6 +6,209 @@
   --font-ui: 'Inter', sans-serif;
 }
 
+/*? Paleta & Fuentes Slytherin */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+
+:root {
+    /*? Verdes base y mazmorra */
+    --slytherin-bg-dark: #0A140E;       /* Fondo ultra oscuro de mázmorra */
+    --slytherin-green-dark: #1A3E2F;    /* Verde base principal (RGB 26, 62, 47) */
+    --slytherin-green-deep: #0E5A00;    /* Verde esmeralda intenso (RGB 14, 90, 0) */
+    --slytherin-green-bright: #0D7717;  /* Verde de acento (RGB 13, 119, 23) */
+
+    /*? Platas y grises puros */
+    --slytherin-silver-light: #D9D9D9;  /* Plata claro para títulos y texto principal */
+    --slytherin-silver-metal: #737373;  /* Gris/Plata medio para bordes */
+    
+    /*? Tipografías */
+    --font-title: 'Cinzel', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+/*? CURSOR MÁGICO (VARITA VERDE NEÓN) */
+body, a, button, .btn, .nav-link, .navbar-brand {
+    cursor: none !important; 
+}
+
+body {
+    background-color: var(--slytherin-bg-dark);
+    color: var(--slytherin-silver-light);
+    font-family: var(--font-body);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+}
+
+/*?Elemento flotante para la varita con resplandor neón */
+#wand-cursor {
+    position: fixed;
+    top: -10px;
+    left: -10px;
+    width: 52px;
+    height: 52px;
+    background-image: url('../assets/varita.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 9999;
+    
+    /*?Filtro Neón Verde Esmeralda */
+    filter: drop-shadow(0 0 6px #00ff66) 
+            drop-shadow(0 0 12px #2a7e43) 
+            brightness(1.4) 
+            contrast(1.2);
+    transition: transform 0.05s ease-out;
+}
+
+
+/*? HERO SECTION */
+.hero-slytherin {
+    min-height: 80vh;
+    position: relative;
+    background-image: url('../assets/Escudo Slytherin.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid var(--slytherin-silver-metal);
+    box-shadow: 0 10px 30px rgba(10, 20, 14, 0.8);
+    padding: 80px 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(10, 20, 14, 0.3) 0%, rgba(10, 20, 14, 0.85) 100%);
+    z-index: 1;
+}
+
+.hero-slytherin .container {
+    position: relative;
+    z-index: 2;
+}
+
+.slytherin-shield {
+    max-width: 170px;
+    height: auto;
+    filter: drop-shadow(0 0 15px rgba(13, 119, 23, 0.5));
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.slytherin-shield:hover {
+    transform: scale(1.06) rotate(2deg);
+    filter: drop-shadow(0 0 25px var(--slytherin-silver-metal));
+}
+
+.hero-title {
+    font-family: var(--font-title);
+    color: var(--slytherin-silver-light);
+    text-shadow: 0 0 15px rgba(217, 217, 217, 0.4), 0 0 25px var(--slytherin-green-deep);
+    letter-spacing: 3px;
+    font-weight: 700 !important;
+}
+
+.hero-subtitle {
+    color: var(--slytherin-silver-light);
+    font-family: var(--font-body);
+    font-weight: 300;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/*? CARRUSEL */
+.custom-carousel {
+    background-color: var(--slytherin-green-dark);
+    border: 1px solid var(--slytherin-silver-metal);
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(13, 119, 23, 0.25);
+    position: relative;
+    padding-bottom: 45px !important;
+}
+
+.carousel-img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 520px !important;
+    object-fit: cover !important;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    filter: brightness(0.9) contrast(1.05);
+}
+
+.carousel-card-below {
+    background-color: var(--slytherin-bg-dark);
+    border-top: 2px solid var(--slytherin-silver-metal);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.text-silver {
+    color: var(--slytherin-silver-light);
+    font-family: var(--font-title);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.custom-indicators {
+    bottom: 12px !important;
+    margin-bottom: 0 !important;
+}
+
+.custom-indicators button {
+    background-color: var(--slytherin-silver-metal) !important;
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50%;
+    margin: 0 5px !important;
+}
+
+.custom-indicators button.active {
+    background-color: var(--slytherin-green-bright) !important;
+    box-shadow: 0 0 8px var(--slytherin-green-bright);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(34%) sepia(85%) saturate(1450%) hue-rotate(100deg) brightness(95%) contrast(90%);
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: rgba(26, 62, 47, 0.3);
+}
+
+/* fondo de la barra: Verde Oscuro Slytherin */
+.bg-slytherin {
+  background-color: #0d2f1d !important;
+  border-bottom: 2px solid #5D5D5D; 
+}
+
+/* important es para asegurar que se coloquen de ese tono */
+.navbar-slytherin .navbar-brand,
+.bg-slytherin .navbar-brand,
+.bg-slytherin .nav-link,
+.text-silver {
+  color: #5D5D5D !important;
+}
+
+/* botón del carrito Borde gris/plateado y texto gris */
+.btn-outline-silver {
+  color: #5D5D5D !important;
+  border-color: #5D5D5D !important;
+}
+
+/* Color verde para el contador del carrito */
+.bg-success {
+  background-color: #2a7e43 !important;
+}
+ <!-- *=========================================
+    * Sección formulario 
+    * ==============================================-->
 .form {
     padding: 30px;
     border-radius: 12px;
@@ -109,5 +309,8 @@
   font-style: italic;
 }
 .form h6{
-    color: #2ecc71;
+  color: #2ecc71;
 }
+   <!-- *=========================================
+    * FIN formulario
+    * ==============================================-->
