@@ -1,21 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><Title></Title></title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <!-- *=========================================
-    * SECCIÓN DEL CATÁLOGO MÁGICO
-    * ==============================================-->
-<section class="catalogo-productos">
 
-</section>
-    <!-- *=========================================
-    * FIN SECCIÓN DEL CATÁLOGO MÁGICO
-    * ==============================================-->
+    <!-- =========================================
+         SECCIÓN DEL CATÁLOGO MÁGICO
+    ============================================== -->
 
-    <script src="app.js" ></script>
+    <section class="catalogo-productos">
+        <h2>Catálogo Mágico</h2>
+        <p></p>
+        <article class="tarjeta-producto" data-id="1">
+            <!-- Rareza -->
+            <span class="rareza">ÉPICO</span>
+            <!-- Imagen -->
+            <div class="imagen-producto">
+                <img src="assets/Varita_Colmillo_Serpiente.png"
+                    alt="Varita Colmillo de Serpiente">
+            </div>
+            <!-- Información del producto -->
+            <div class="info-producto">
+                <p class="categoria">VARITAS</p>
+                <h3 class="nombre-producto">
+                    Varita Colmillo de Serpiente
+                </h3>
+                <p class="descripcion-producto">
+                    Forjada para magos ambiciosos. Precisión excepcional
+                    en duelo y defensa.
+                </p>
+                <!-- Características -->
+                <div class="caracteristicas">
+                    <span>⚔️ Duelo</span>
+                    <span>🎖️ Avanzado</span>
+                    <span>🛡️ Defensa</span>
+                </div>
+                <!-- Precio y stock -->
+                <div class="precio-stock">
+                    <p class="precio">58 <span>G</span></p>
+                    <p class="stock">● En stock</p>
+                </div>
+                <!-- Botón -->
+                <button class="boton-carrito" data-id="1">
+                    🐍 Agregar al carrito
+                </button>
+            </div>
+        </article>
+    </section>
+    <!-- =========================================
+         FIN SECCIÓN DEL CATÁLOGO MÁGICO
+    ============================================== -->
+
 </body>
 </html>
