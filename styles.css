@@ -1,31 +1,55 @@
-/* Definición de variables globales para tipografía */
-:root {
-  --font-heading: 'Cinzel', serif;
-  --font-subheading: 'Cormorant Garamond', serif;
-  --font-body: 'Montserrat', sans-serif;
-  --font-ui: 'Inter', sans-serif;
-}
-
-/*? Paleta & Fuentes Slytherin */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+/* ==========================================================================
+   1. VARIABLES, FUENTES Y NORMAS GLOBALES
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Cormorant+Garamond:wght@600;700&family=EB+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;600&family=Spectral:wght@500&family=Work+Sans:wght@400;500&display=swap');
 
 :root {
-    /*? Verdes base y mazmorra */
-    --slytherin-bg-dark: #0A140E;       /* Fondo ultra oscuro de mázmorra */
-    --slytherin-green-dark: #1A3E2F;    /* Verde base principal (RGB 26, 62, 47) */
-    --slytherin-green-deep: #0E5A00;    /* Verde esmeralda intenso (RGB 14, 90, 0) */
-    --slytherin-green-bright: #0D7717;  /* Verde de acento (RGB 13, 119, 23) */
+    /* Verdes base y mazmorra */
+    --slytherin-bg-dark: #0A140E;       /* Fondo ultra oscuro */
+    --slytherin-green-dark: #1A3E2F;    /* Verde base principal */
+    --slytherin-green-deep: #0E5A00;    /* Verde esmeralda intenso */
+    --slytherin-green-bright: #0D7717;  /* Verde de acento */
+    --emerald: #2F6B45;
+    --emerald-deep: #1B3F2A;
 
-    /*? Platas y grises puros */
-    --slytherin-silver-light: #D9D9D9;  /* Plata claro para títulos y texto principal */
-    --slytherin-silver-metal: #737373;  /* Gris/Plata medio para bordes */
+    /* Platas y grises puros */
+    --slytherin-silver-light: #D9D9D9;  /* Texto principal y títulos */
+    --slytherin-silver-metal: #737373;  /* Bordes metálicos */
+    --silver: #ADBAB3;
     
-    /*? Tipografías */
+    /* Superficies y acentos */
+    --surface: #12211B;
+    --surface-alt: #182B23;
+    --ink: #E9EFEA;
+    --ink-muted: #8FA398;
+    --line: #24382F;
+    --gold-accent: #B08D3E;
+
+    /* Variables específicas del Manifiesto */
+    --manifiesto-fondo: #031b10b6;
+    --manifiesto-panel: #121A16;
+    --manifiesto-acento: #3A6B52;
+    --manifiesto-linea: #3E4A42;
+    --manifiesto-plata: #9AA79C;
+    --manifiesto-texto: #EDEFEA;
+
+    /* Tipografías */
+    --font-heading: 'Cinzel', serif;
+    --font-subheading: 'Cormorant Garamond', serif;
     --font-title: 'Cinzel', serif;
     --font-body: 'Montserrat', sans-serif;
+    --font-serif: 'EB Garamond', Georgia, serif;
 }
 
-/*? CURSOR MÁGICO (VARITA VERDE NEÓN) */
+* { 
+    box-sizing: border-box; 
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Offset para que el Navbar fijo no tape los títulos */
+}
+
 body, a, button, .btn, .nav-link, .navbar-brand {
     cursor: none !important; 
 }
@@ -39,20 +63,26 @@ body {
     overflow-x: hidden; 
 }
 
-/*?Elemento flotante para la varita con resplandor neón */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: .02em;
+}
+
+/* ==========================================================================
+   2. CURSOR MÁGICO
+   ========================================================================== */
 #wand-cursor {
     position: fixed;
     top: -10px;
     left: -10px;
     width: 52px;
     height: 52px;
-    background-image: url('../assets/varita.png');
+    background-image: url('assets/Varita Slytherin.png');
     background-size: contain;
     background-repeat: no-repeat;
     pointer-events: none;
     z-index: 9999;
-    
-    /*?Filtro Neón Verde Esmeralda */
     filter: drop-shadow(0 0 6px #00ff66) 
             drop-shadow(0 0 12px #2a7e43) 
             brightness(1.4) 
@@ -60,16 +90,93 @@ body {
     transition: transform 0.05s ease-out;
 }
 
+/* ==========================================================================
+   3. BARRA DE NAVEGACIÓN (NAVBAR)
+   ========================================================================== */
+.navbar-slytherin {
+    background-color: rgba(10, 20, 14, 0.95) !important;
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(217, 217, 217, 0.2) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
 
-/*? HERO SECTION */
+.navbar-brand {
+    position: relative;
+    padding-left: 90px !important;
+}
+
+.nav-logo {
+    position: absolute;
+    top: 60%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 80px !important;    
+    object-fit: contain;
+    mix-blend-mode: screen;
+    filter: drop-shadow(0 0 10px rgba(13, 119, 23, 0.9));
+    z-index: 10;
+}
+
+.nav-brand-text {
+    font-family: var(--font-title) !important;
+    font-size: 1.35rem;
+    letter-spacing: 3px;
+    font-weight: 700;
+    color: #d6d6d6 !important;
+    text-shadow: 0 0 10px rgba(13, 119, 23, 0.5);
+}
+
+.navbar-slytherin .nav-link {
+    color: #d6d6d6 !important;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.navbar-slytherin .nav-link:hover {
+    color: #2a7e43 !important;
+    text-shadow: 0 0 8px rgba(42, 126, 67, 0.6);
+}
+
+/* Textos de Marca Generales */
+.brand-text {
+    font-family: var(--font-title) !important;
+    color: var(--slytherin-silver-light);
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(13, 119, 23, 0.3);
+}
+
+/* ==========================================================================
+   4. BOTONES GENERALES
+   ========================================================================== */
+.btn-carrito,
+.btn-catalogo,
+.btn-formulario {
+    background-color: #123824 !important;
+    color: #e0e0e0 !important;
+    border: 2px solid #999999 !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease-in-out !important;
+}
+
+.btn-carrito:hover,
+.btn-catalogo:hover,
+.btn-formulario:hover {
+    background-color: #1b5235 !important;
+    color: #ffffff !important;
+    border-color: #2a7e43 !important;
+    transform: scale(1.05) !important;
+    box-shadow: 0 0 20px #2a7e43 !important;
+}
+
+/* ==========================================================================
+   5. SECCIÓN HERO GENERAL
+   ========================================================================== */
 .hero-slytherin {
     min-height: 80vh;
     position: relative;
-    background-image: url('../assets/Escudo Slytherin.jpg');
+    background-image: url('assets/Escudo Slytherin.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center; 
-    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -120,7 +227,9 @@ body {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
-/*? CARRUSEL */
+/* ==========================================================================
+   6. CARRUSEL
+   ========================================================================== */
 .custom-carousel {
     background-color: var(--slytherin-green-dark);
     border: 1px solid var(--slytherin-silver-metal);
@@ -182,209 +291,56 @@ body {
     background-color: rgba(26, 62, 47, 0.3);
 }
 
-/* fondo de la barra: Verde Oscuro Slytherin */
-.bg-slytherin {
-  background-color: #0d2f1d !important;
-  border-bottom: 2px solid #5D5D5D; 
-}
-
-/* important es para asegurar que se coloquen de ese tono */
-.navbar-slytherin .navbar-brand,
-.bg-slytherin .navbar-brand,
-.bg-slytherin .nav-link,
-.text-silver {
-  color: #5D5D5D !important;
-}
-
-/* botón del carrito Borde gris/plateado y texto gris */
-.btn-outline-silver {
-  color: #5D5D5D !important;
-  border-color: #5D5D5D !important;
-}
-
-/* Color verde para el contador del carrito */
-.bg-success {
-  background-color: #2a7e43 !important;
-}
- <!-- *=========================================
-    * Sección formulario 
-    * ==============================================-->
-.form {
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0, 255, 128, 0.15), 0 0 10px rgba(170, 170, 170, 0.2);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: 2px solid #5d5d5d;
-    color: #e0e0e0;
-    background: linear-gradient(145deg, #122b1b, #0a170f);
-  }
-
-  /* Color del título */
-  .form h3 {
-    color: #AAAAAA;
-    margin-bottom: 20px;
-    font-family: var(--font-subheading); 
-    font-weight: bold;
-    text-align: center;
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
-  }
-   /* Color del título */
-  .form h6 {
-    color: #AAAAAA; 
-    margin-bottom: 20px;
-    font-family: var(--font-heading); 
-    font-weight: bold;
-  }
-
-  /* Color de los labels (etiquetas de texto) */
-  .form .form-label {
-    color: #2ecc71;
-    font-weight: bold;
-    font-family: var(--font-heading);
-    font-size: 0.9rem;
-  letter-spacing: 1px;
-  }
-
- /* Campos de entrada y selecciones */
-.form .form-control, .form .form-select {
-  background-color: #08120b;
-  border: 1px solid #2a5235;
-  color: #ffffff;
-  border-radius: 6px;
-}
-
-  /* Color de los inputs (campos de texto) */
-  .form .form-control {
-    background-color: #2A623D;
-    border: 1px solid #ced4da;
-    color: #F1F1F1;
-  }
-
-  /* Color al enfocar/hacer clic en un input */
-  .form .form-control:focus {
-    border-color: #218838;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-  }
-
-
-  /* Color del botón */
-  .form .btn-primary {
-    background-color: #2A623D; /* Verde */
-    border-color: #2A623D;
-  }
-
-  /* Color del botón al pasar el cursor (hover) */
-  .form .btn-primary:hover {
-    background-color: #218838;
-    border-color: #1e7e34;
-  }
-
-  /* Resplandor al seleccionar un campo */
-.form .form-control:focus, .form .form-select:focus {
-  background-color: #0e1e12;
-  border-color: #aaaaaa; /* Borde plateado en focus */
-  box-shadow: 0 0 10px rgba(170, 170, 170, 0.4);
-  color: #fff;
-}
-.form .btn-primary {
-  background: linear-gradient(135deg, #1a472a, #2e7d32);
-  border: 1px solid #aaaaaa;
-  color: #ffffff;
-  font-family: 'Cinzel', serif;
-  font-weight: bold;
-  letter-spacing: 1.5px;
-  transition: all 0.3s ease;
-}
-.form .btn-primary {
-  background: linear-gradient(135deg, #1a472a, #2e7d32);
-  border: 1px solid #aaaaaa;
-  color: #ffffff;
-  font-family: 'Cinzel', serif;
-  font-weight: bold;
-  letter-spacing: 1.5px;
-  transition: all 0.3s ease;
-}
-.form .form-text {
-  color: #88a38f;
-  font-style: italic;
-}
-.form h6{
-  color: #2ecc71;
-}
-   <!-- *=========================================
-    * FIN formulario
-    * ==============================================-->
-
-/* ==============================================
-* SECCION DE ESTILOS PARA EL CATÁLOGO MÁGICO
-================================================= */
-:root{
-    --bg: #0A120F;
-    --surface: #12211B;
-    --surface-alt: #182B23;
-    --emerald: #2F6B45;
-    --emerald-deep: #1B3F2A;
-    --silver: #ADBAB3;
-    --ink: #E9EFEA;
-    --ink-muted: #8FA398;
-    --line: #24382F;
-    --gold-accent: #B08D3E;
-  }
- 
-  *{ box-sizing: border-box; }
- 
-  body{
-    margin:0;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: 'Work Sans', sans-serif;
-  }
- 
-  .catalog{
-    /*max-width: 1180px;*/
+/* ==========================================================================
+   7. CATÁLOGO MÁGICO & PRODUCTOS
+   ========================================================================== */
+.catalog {
     margin: 0 auto;
     padding: 4rem 1.5rem 5rem;
     background-image: url("assets/background_catalogo.png");
     background-size: cover;
     background-position: center;
-  }
- 
-  .catalog-header{
+}
+
+.catalog-header {
     max-width: 640px;
     position: relative;
     padding-left: 1.25rem;
     border-left: 2px solid var(--emerald-deep);
-  }
- 
-  .catalog-header h2{
+}
+
+.catalog-header h2 {
     font-family: 'Spectral', serif;
     font-weight: 500;
     font-size: clamp(2rem, 4vw, 2.75rem);
     margin: 0 0 .75rem;
     color: var(--ink);
     letter-spacing: .01em;
-  }
- 
-  .catalog-header p{
+}
+
+.catalog-header p {
     margin: 0;
     color: var(--ink-muted);
     line-height: 1.6;
     font-size: .975rem;
-  }
- 
-  /* Category tabs */
-  .category-tabs{
+}
+
+/* Tabs de Categoría */
+.category-tabs {
     display: flex;
     gap: 1.9rem;
     overflow-x: auto;
     border-bottom: 1px solid var(--line);
-    padding: 0 0 0;
+    padding: 0;
     margin: 2.75rem 0 2.5rem;
     scrollbar-width: none;
-  }
-  .category-tabs::-webkit-scrollbar{ display:none; }
- 
-  .tab{
+}
+
+.category-tabs::-webkit-scrollbar { 
+    display: none; 
+}
+
+.tab {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -399,8 +355,9 @@ body {
     position: relative;
     white-space: nowrap;
     transition: color .2s ease;
-  }
-  .tab svg{
+}
+
+.tab svg {
     width: 21px;
     height: 21px;
     stroke: currentColor;
@@ -408,95 +365,113 @@ body {
     stroke-width: 1.4;
     opacity: .65;
     transition: opacity .2s ease;
-  }
-  .tab::after{
-    content:'';
-    position:absolute;
-    left:0; right:0; bottom:-1px;
-    height:2px;
+}
+
+.tab::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: -1px;
+    height: 2px;
     background: var(--emerald);
     transform: scaleX(0);
     transition: transform .25s ease;
-  }
-  .tab:hover{ color: var(--ink); }
-  .tab.active{ color: var(--ink); }
-  .tab.active svg{ opacity: 1; }
-  .tab.active::after{ transform: scaleX(1); }
- 
-  /* Product grid */
-  .product-grid{
+}
+
+.tab:hover,
+.tab.active { 
+    color: var(--ink); 
+}
+
+.tab.active svg { 
+    opacity: 1; 
+}
+
+.tab.active::after { 
+    transform: scaleX(1); 
+}
+
+/* Grid de Productos */
+.product-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     transition: opacity .28s ease, transform .28s ease;
-  }
-  .product-grid.is-switching{
+}
+
+.product-grid.is-switching {
     opacity: 0;
     transform: translateY(6px);
-  }
- 
-  .product-card{
+}
+
+.product-card {
     display: flex;
     flex-direction: column;
     background: linear-gradient(180deg, var(--surface) 0%, var(--surface-alt) 100%);
     border: 1px solid var(--line);
     transition: transform .25s ease, border-color .25s ease;
-  }
-  .product-card:hover{
+}
+
+.product-card:hover {
     transform: translateY(-4px);
     border-color: var(--emerald);
-  }
- 
-  .product-media{
+}
+
+.product-media {
     aspect-ratio: 4 / 3;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(circle at 32% 24%, var(--emerald-deep), var(--bg) 72%);
+    background: radial-gradient(circle at 32% 24%, var(--emerald-deep), var(--slytherin-bg-dark) 72%);
     border-bottom: 1px solid var(--line);
-  }
-  .product-media svg{
+}
+
+.product-media svg {
     width: 34%;
     height: 34%;
     stroke: var(--silver);
     fill: none;
     stroke-width: 1.2;
     opacity: .85;
-  }
- 
-  .product-body{
+}
+
+.product-body {
     padding: 1.25rem 1.25rem 1.4rem;
     display: flex;
     flex-direction: column;
     gap: .5rem;
     flex: 1;
-  }
-  .product-name{
+}
+
+.product-name {
     font-family: 'Spectral', serif;
     font-weight: 500;
     font-size: 1.1rem;
     margin: 0;
     color: var(--ink);
-  }
-  .product-desc{
+}
+
+.product-desc {
     font-size: .85rem;
     color: var(--ink-muted);
     line-height: 1.55;
     margin: 0;
     flex: 1;
-  }
-  .product-footer{
+}
+
+.product-footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: .75rem;
-  }
-  .product-price{
+}
+
+.product-price {
     font-weight: 600;
     font-size: .95rem;
     color: var(--gold-accent);
-  }
-  .add-btn{
+}
+
+.add-btn {
     background: transparent;
     border: 1px solid var(--silver);
     color: var(--ink);
@@ -505,34 +480,21 @@ body {
     font-family: 'Work Sans', sans-serif;
     cursor: pointer;
     transition: background .2s ease, color .2s ease, border-color .2s ease;
-  }
-  .add-btn:hover{
+}
+
+.add-btn:hover {
     background: var(--emerald);
     border-color: var(--emerald);
     color: #fff;
-  }
-  .add-btn.added{
+}
+
+.add-btn.added {
     background: var(--emerald-deep);
     border-color: var(--emerald-deep);
     color: var(--ink);
-  }
- 
-  @media (max-width: 760px){
-    .product-grid{ grid-template-columns: 1fr; }
-    .category-tabs{ gap: 1.3rem; }
-    .catalog{ padding: 3rem 1.25rem 4rem; }
-  }
-
-.catalogo-productos {
-    min-height: 600px;
-    background-image: url("assets/background_catalogo.png");
-    background-size: cover;
-    background-position: center;
-    color: beige;
-    padding: 40px;
 }
 
-/* TARJETA DEL PRODUCTO */
+/* Tarjeta Alternativa de Producto */
 .tarjeta-producto {
     position: relative;
     width: 100%;
@@ -543,7 +505,6 @@ body {
     overflow: hidden;
     color: #f2ede2;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
-    font-family: Arial, sans-serif;
 }
 
 .tarjeta-producto::after {
@@ -555,7 +516,6 @@ body {
     pointer-events: none;
 }
 
-/* RAREZA */
 .rareza {
     position: absolute;
     top: 0;
@@ -572,7 +532,6 @@ body {
     letter-spacing: 2px;
 }
 
-/* IMAGEN */
 .imagen-producto {
     width: 100%;
     height: 190px;
@@ -592,7 +551,6 @@ body {
     transform: scale(1.04);
 }
 
-/* INFORMACIÓN */
 .info-producto {
     position: relative;
     padding: 18px;
@@ -626,7 +584,6 @@ body {
     text-align: center;
 }
 
-/* CARACTERÍSTICAS */
 .caracteristicas {
     display: flex;
     justify-content: center;
@@ -644,7 +601,6 @@ body {
     font-size: 10px;
 }
 
-/* PRECIO Y STOCK */
 .precio-stock {
     display: flex;
     align-items: center;
@@ -671,7 +627,6 @@ body {
     font-size: 11px;
 }
 
-/* BOTÓN */
 .boton-carrito {
     width: 100%;
     margin-top: 15px;
@@ -691,6 +646,368 @@ body {
     transform: translateY(-2px);
 }
 
-/* ==================================================
-* FIN DE SECCION DE ESTILOS PARA EL CATÁLOGO MÁGICO
-===================================================== */
+/* ==========================================================================
+   8. MANIFIESTO, LINAJE E HISTORIA
+   ========================================================================== */
+#hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--manifiesto-fondo);
+    border-bottom: 5px solid var(--manifiesto-linea);
+}
+
+#hero h1 { 
+    font-size: clamp(2.2rem, 5vw, 3.6rem); 
+    margin-bottom: .5rem; 
+}
+
+.hero-media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    filter: none;
+}
+
+.hero-media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(11,18,15,.3), var(--manifiesto-fondo) 95%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.linaje-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 1.5rem;
+    border-bottom: 1px solid var(--manifiesto-linea);
+}
+
+.linaje-marca {
+    font-family: var(--font-heading);
+    color: var(--manifiesto-acento);
+    font-size: 1.4rem;
+}
+
+#cualidades { 
+    padding-bottom: 3rem; 
+}
+
+.linaje-grid {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.linaje-col {
+    padding: 0 1.5rem;
+    border-left: 1px solid var(--manifiesto-linea);
+}
+
+.linaje-col:first-child { 
+    border-left: none; 
+    padding-left: 0; 
+}
+
+.linaje-col h3 { 
+    font-size: 1.1rem; 
+    margin-bottom: .6rem; 
+    color: var(--manifiesto-acento); 
+}
+
+.linaje-col p { 
+    color: var(--manifiesto-plata); 
+    line-height: 1.6; 
+    font-size: .98rem; 
+}
+
+#historia { 
+    padding-bottom: 4rem; 
+}
+
+.historia-cuerpo {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem 2rem;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 2rem;
+}
+
+.historia-texto > div {
+    position: relative;
+}
+
+.historia-anio {
+    font-family: var(--font-heading);
+    color: var(--manifiesto-acento);
+    font-size: .85rem;
+    margin-top: 1.5rem;
+    margin-bottom: .3rem;
+}
+
+.historia-anio:first-child { 
+    margin-top: 0; 
+}
+
+.historia-anio::before {
+    content: '';
+    position: absolute;
+    left: -1.2rem;
+    top: .5em;
+    width: .5rem;
+    height: 1px;
+    background: var(--manifiesto-acento);
+}
+
+.historia-texto p:not(.historia-anio) { 
+    color: var(--manifiesto-plata); 
+    line-height: 1.65; 
+}
+
+.mapa-label {
+    fill: var(--manifiesto-plata);
+    font-family: var(--font-serif);
+    font-size: 11px;
+}
+
+.plano-sitio {
+    max-width: 800px;
+    margin: 3rem auto 0;
+    padding: 2rem 1.5rem;
+    border-top: 1px solid var(--manifiesto-linea);
+    text-align: center;
+}
+
+/* ==========================================================================
+   9. FORMULARIO DE RECLUTAMIENTO
+   ========================================================================== */
+.form {
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 255, 128, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid #5d5d5d;
+    color: #e0e0e0;
+    background: linear-gradient(145deg, #122b1b, #0a170f);
+}
+
+.form h3 {
+    color: #AAAAAA;
+    margin-bottom: 20px;
+    font-family: var(--font-subheading);
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+.form h6 {
+    color: #2ecc71;
+    margin-bottom: 20px;
+    font-family: var(--font-heading);
+    font-weight: bold;
+}
+
+.form .form-label {
+    color: #2ecc71;
+    font-weight: bold;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.form .form-control, 
+.form .form-select {
+    background-color: #08120b;
+    border: 1px solid #2a5235;
+    color: #ffffff;
+    border-radius: 6px;
+}
+
+.form .form-control:focus, 
+.form .form-select:focus {
+    background-color: #0e1e12;
+    border-color: #aaaaaa;
+    box-shadow: 0 0 10px rgba(170, 170, 170, 0.4);
+    color: #fff;
+}
+
+.form .btn-primary {
+    background: linear-gradient(135deg, #1a472a, #2e7d32);
+    border: 1px solid #aaaaaa;
+    color: #ffffff;
+    font-family: var(--font-heading);
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    transition: all 0.3s ease;
+}
+
+.form .btn-primary:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+.form .form-text {
+    color: #88a38f;
+    font-style: italic;
+}
+
+/* ==========================================================================
+   10. PIE DE PÁGINA (FOOTER)
+   ========================================================================== */
+.footer {
+    background-color: #07110c;
+    border-top: 2px solid #9ca3a0;
+    padding-top: 40px;
+    margin-top: 100px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px 40px;
+}
+
+.footer-brand h2 {
+    color: #2ecc71;
+    font-size: 28px;
+    letter-spacing: 3px;
+    font-family: var(--font-heading);
+}
+
+.footer-brand p {
+    color: #bfc5c2;
+    margin-top: 10px;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 25px;
+}
+
+.footer-nav a {
+    color: #d5d9d7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: #2ecc71;
+}
+
+.footer-social {
+    display: flex;
+    gap: 12px;
+}
+
+.footer-social a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #9ca3a0;
+    border-radius: 50%;
+    color: #d5d9d7;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #2ecc71;
+    border-color: #2ecc71;
+}
+
+.footer-bottom {
+    border-top: 1px solid #39423d;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    color: #8f9893;
+    font-size: 14px;
+}
+
+/* ==========================================================================
+   11. RESPONSIVIDAD (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* Ajustes Catálogo */
+    .product-grid { 
+        grid-template-columns: 1fr; 
+    }
+    
+    .category-tabs { 
+        gap: 1.3rem; 
+    }
+    
+    .catalog { 
+        padding: 3rem 1.25rem 4rem; 
+    }
+
+    /* Ajustes Manifiesto */
+    .linaje-grid { 
+        grid-template-columns: 1fr; 
+    }
+
+    .linaje-col { 
+        border-left: none; 
+        border-top: 1px solid var(--manifiesto-linea); 
+        padding: 1.5rem 0 0; 
+        margin-top: 1.5rem; 
+    }
+
+    .linaje-col:first-child { 
+        border-top: none; 
+        margin-top: 0; 
+    }
+
+    .historia-cuerpo { 
+        grid-template-columns: 1fr; 
+    }
+
+    .historia-mapa { 
+        max-width: 180px; 
+        margin: 0 auto; 
+    }
+
+    /* Ajustes Footer */
+    .footer-container {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer-nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
