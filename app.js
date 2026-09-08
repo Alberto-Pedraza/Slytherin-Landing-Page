@@ -402,7 +402,7 @@ if (formulario) {
 
         if (!sangreValue) {
             formularioValido = false;
-            mensajesError.push("Debes seleccionar tu estatus de sangre.");
+            mensajesError.push("Debes seleccionar un estatus de sangre válido.");
         }
 
         if (!cualidadValue) {
