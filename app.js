@@ -52,8 +52,8 @@ if (wand) {
             id: 'varitas', label: 'Varitas', icon: 'wand',
             products: [
                 { id: 'var1', name: 'Varita de Colmillo de Serpiente', price: 58, imagen: 'assets/Varita_Colmillo_Serpiente.png', desc: 'Madera de ébano con núcleo de colmillo de serpiente. Favorece hechizos defensivos' },
-                { id: 'var2', name: 'Varita de Vena de Basilisco', price: 75, imagen: 'assets/Varita_Vena_de_Basilisco.png', desc: 'Madera de serpiente con núcleo de cuerno de basilisco. Canaliza un poder legendario.' },
-                { id: 'var3', name: 'Varita de Salazar Slytherin', price: 100, imagen: 'assets/Salazar_Slytherin_Wand.png', desc: 'Réplica de la mítica varita del fundador de la casa Slytherin.' }
+                { id: 'var2', name: 'Varita de Vena de un Basilisco', price: 75, imagen: 'assets/Varita_Vena_de_Basilisco.png', desc: 'Madera de serpiente con núcleo de cuerno de basilisco. Canaliza un poder legendario.' },
+                { id: 'var3', name: 'Varita Suprema de Salazar Slytherin', price: 100, imagen: 'assets/Salazar_Slytherin_Wand.png', desc: 'Réplica de la mítica varita del fundador de la casa Slytherin.' }
             ]
         },
         {
@@ -67,7 +67,7 @@ if (wand) {
         {
             id: 'tunicas', label: 'Túnicas y Ropa', icon: 'robe',
             products: [
-                { id: 'tuni1', name: 'Túnica Clásica de Slytherin', price: 35, imagen: 'assets/tunica1.png', desc: 'Túnica negra con detalles verde esmeralda y forro de seda.' },
+                { id: 'tuni1', name: 'Túnica Clásica Moderna de Slytherin', price: 35, imagen: 'assets/tunica1.png', desc: 'Túnica negra con detalles verde esmeralda y forro de seda.' },
                 { id: 'tuni2', name: 'Túnica de la Reliquia de la Casa', price: 65, imagen: 'assets/tunica2.png', desc: 'Una bata de casa, para los más astutos y ambiciosos de Slytherin.' },
                 { id: 'tuni3', name: 'Conjunto de Bufanda, Guantes y Gorro', price: 15, imagen: 'assets/gorros.png', desc: 'Accesorios ideales para soportar el frío de las mazmorras.' }
             ]
@@ -77,14 +77,14 @@ if (wand) {
             products: [
                 { id: 'reli1', name: 'Anillo de la Serpiente Plateada', price: 70, imagen: 'assets/Anillo_Serpiente_Plateada.png', desc: 'Anillo antiguo utilizado como símbolo entre familias mágicas.' },
                 { id: 'reli2', name: 'Reloj de serpiente de bolsillo', price: 55, imagen: 'assets/Reloj_serpiente_bolsillo.png', desc: 'Reloj encantado que nunca pierde la hora ni el ritmo.' },
-                { id: 'reli3', name: 'Guardapelo de Slytherin', price: 100, imagen: 'assets/Guardapelo_Slytherin.png', desc: 'Este guardapelo dorado es una reliquia familiar pertenecida a Salazar Slytherin.' }
+                { id: 'reli3', name: 'Guardapelo de Slytherin (Horrocrux)', price: 10000, imagen: 'assets/Guardapelo_Slytherin.png', desc: 'Este guardapelo dorado es una reliquia familiar pertenecida a Salazar Slytherin.' }
             ]
         },
         {
             id: 'libros', label: 'Grimorios y Libros', icon: 'book',
             products: [
                 { id: 'book1', name: 'Apuntes de Campo Sobre la Lengua de Serpiente', price: 60, imagen: 'assets/libro1.png', desc: 'Libro excepcional sobre el estudio y pronunciación del Pársel.' },
-                { id: 'book2', name: 'Diario de Slytherin', price: 100, imagen: 'assets/libro2.png', desc: 'En este diario se abordan los planes futuros de Salazar Slytherin.' },
+                { id: 'book2', name: 'Diario Mágico de Salazar Slytherin', price: 100, imagen: 'assets/libro2.png', desc: 'En este diario se abordan los planes futuros de Salazar Slytherin.' },
                 { id: 'book3', name: 'Archivo de Genealogía de Sangre Pura', price: 46, imagen: 'assets/libro3.png', desc: 'Compendio reservado de linajes mágicos y registros heráldicos.' }
             ]
         }
