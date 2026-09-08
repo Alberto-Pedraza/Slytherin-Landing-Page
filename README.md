@@ -58,7 +58,7 @@ Si quieres revisar nuestro código y ejecutarlo en tu computadora, sigue estos p
 
 ### 📋 Prerrequisitos
 
-* Tener instalado [Git](https://git-scm.com/).
+* Tener instalado [Git].
 
 ### 💻 Pasos para clonar
 
